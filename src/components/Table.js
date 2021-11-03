@@ -148,8 +148,9 @@ const styles = makeStyles({
 		position: 'relative',
 		transformOrigin: '0 0',
 
-		'@media(max-width:1280px)': {
+		'@media(max-width:1260px)': {
 			width: '95%',
+			transform: 'scale(0.99)',
 		},
 		'@media(max-width:1200px)': {
 			transform: 'scale(0.85)',

@@ -32,7 +32,7 @@
 }
 
 .tb th {
-	border: 1px solid #477eff;
+	/* border: 1px solid #477eff; */
 	padding: 1rem;
 	color: #fff;
 	font-weight: 400;
@@ -53,20 +53,12 @@
 }
 
 @media (max-width: 1280px) {
-	.table {
-		width: 95%;
-	}
 	.tb {
 		transform-origin: 0 0;
-		transform: scale(0.99);
 	}
 }
 
 @media (max-width: 1200px) {
-	.table {
-		transform-origin: 0 0;
-		transform: scale(0.85);
-	}
 	.tb {
 		width: 100%;
 	}
@@ -79,7 +71,6 @@
 }
 @media (max-width: 1000px) {
 	.tb {
-		/* border: 1px solid black; */
 		width: 100%;
 	}
 }
