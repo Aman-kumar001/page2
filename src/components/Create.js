@@ -89,7 +89,7 @@ const styles = makeStyles({
 		padding: '1rem 3rem',
 		backgroundColor: '#fff',
 		borderRadius: '10px',
-		'& :hover': {
+		'&:hover': {
 			boxShadow: '0px 26px 81px #33333310',
 		},
 	},
@@ -108,7 +108,7 @@ const styles = makeStyles({
 		backgroundColor: '#fff',
 		borderRadius: '10px',
 		margin: '1.5rem 0',
-		'& :hover': {
+		'&:hover': {
 			boxShadow: '0px 26px 81px #33333310',
 		},
 	},
