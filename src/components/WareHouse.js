@@ -49,7 +49,7 @@ const styles = makeStyles({
 			},
 		},
 		'& p:nth-child(2)': {
-			fontSize: '0.8rem',
+			fontSize: '1rem',
 			color: '#366ef1',
 			padding: '0.2rem',
 			justifyContent: 'center',
@@ -222,15 +222,9 @@ const WareHouse = () => {
 				<div className={classes.pageInfo}>
 					<div className={classes.infoLeft}>
 						<p>Manage Warehouse</p>
-						{
-							// totalChecked > 0 &&
-							<p>{totalChecked} ORDER SELECTED</p>
-						}
+						<p>{totalChecked > 0 ? totalChecked + ' Orders Selected' : ''}</p>
 						<p>
-							{
-								// totalChecked > 0 &&
-								<p style={{ cursor: 'pointer' }}>Delete</p>
-							}
+							{totalChecked > 0 && <p style={{ cursor: 'pointer' }}>Delete</p>}
 						</p>
 					</div>
 					<div className={classes.infoRight}>
