@@ -119,12 +119,13 @@ const styles = makeStyles({
 		flexWrap: 'wrap',
 	},
 	textCreate: {
-		minWidth: '10rem',
-		flex: 1,
+		//flex: 1,
+		width: '20%',
 		minWidth: '15rem',
 		margin: '1rem 0',
 		'& label': {
 			display: 'block',
+			textAlign: 'left',
 			fontSize: '0.8rem',
 		},
 		'& input': {
@@ -589,6 +590,7 @@ const Create = () => {
 											margin: '0',
 											fontSize: '0.8rem',
 											marginBottom: '0.1rem',
+											textAlign: 'left',
 										}}
 									>
 										Select Product
@@ -897,6 +899,7 @@ const Create = () => {
 											margin: '0',
 											fontSize: '0.8rem',
 											marginBottom: '0.1rem',
+											textAlign: 'left',
 										}}
 									>
 										Quantity
@@ -973,11 +976,19 @@ const Create = () => {
 											margin: '0',
 											fontSize: '0.8rem',
 											marginBottom: '0.1rem',
+											textAlign: 'left',
 										}}
 									>
 										Cost
 									</p>
-									<p style={{ margin: '0', flex: '1' }}>
+									<p
+										style={{
+											margin: '0',
+											flex: '1',
+											justifyContent: 'left',
+											display: 'flex',
+										}}
+									>
 										<span
 											style={{
 												border: '1px solid #33333350',
@@ -1112,7 +1123,7 @@ const Create = () => {
 								padding: '0.2rem 0',
 								color: '#fff',
 								display: 'inline-block',
-								width: '1.7rem',
+								minWidth: '1.7rem',
 								height: '1.7rem',
 								textAlign: 'center',
 							}}
