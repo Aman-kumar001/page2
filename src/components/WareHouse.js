@@ -160,11 +160,21 @@ const styles = makeStyles({
 		overflow: 'auto',
 		fontSize: '1rem',
 		fontWeight: '700',
+
 		'& tr': {
 			textAlign: 'left !important',
 		},
 		'& td': {
 			textAlign: 'left !important',
+			'& p': {
+				maxWidth: '11rem',
+				whiteSpace: 'nowrap',
+				overflow: 'hidden',
+				textOverflow: 'ellipsis',
+			},
+		},
+		'& th': {
+			borderLeft: '1px solid #477EFF',
 		},
 	},
 	mail: {
@@ -172,6 +182,31 @@ const styles = makeStyles({
 			fontWeight: '500',
 			fontSize: '0.7rem',
 			textAlign: 'left',
+		},
+	},
+	actions: {
+		display: 'flex',
+		justifyContent: 'space-between',
+		width: '80%',
+		margin: 'auto',
+
+		'& span': {
+			height: '2rem',
+			width: '2rem',
+			display: 'block',
+			borderRadius: '50%',
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+		},
+		'& span:nth-child(1)': {
+			backgroundColor: '#CCDBFF',
+		},
+		'& span:nth-child(2)': {
+			backgroundColor: '#FFCCD5',
+		},
+		'@media(max-width:1200px)': {
+			width: '100%',
 		},
 	},
 });
@@ -393,16 +428,76 @@ const WareHouse = () => {
 										</span>
 									</td>
 									<td>{data.id}</td>
-									<td>{data.WareName}</td>
+									<td>
+										<p style={{ maxWidth: '8rem' }}>{data.WareName}</p>
+									</td>
 									<td>{data.state}</td>
 									<td>{data.Address}</td>
 									<td>{data.pincode}</td>
-									<td>{data.name}</td>
-									<td className={classes.mail}>
-										<p>{data.phone}</p>
-										<p>{data.mail}</p>
+									<td>
+										<p>{data.name}</p>
 									</td>
-									<td></td>
+									<td className={classes.mail}>
+										<p style={{ display: 'flex', alignItems: 'center' }}>
+											<svg
+												xmlns='http://www.w3.org/2000/svg'
+												width='10'
+												height='10'
+												viewBox='0 0 24 24'
+											>
+												<path
+													d='M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z'
+													fill='#366EF1'
+												/>
+											</svg>{' '}
+											{data.phone}
+										</p>
+										<p style={{ display: 'flex', alignItems: 'center' }}>
+											<svg
+												xmlns='http://www.w3.org/2000/svg'
+												width='10'
+												height='10'
+												viewBox='0 0 24 24'
+											>
+												<path
+													d='M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z'
+													fill='#366EF1'
+												/>
+											</svg>{' '}
+											&nbsp;
+											{data.mail}
+										</p>
+									</td>
+									<td>
+										<div className={classes.actions}>
+											<span>
+												<svg
+													xmlns='http://www.w3.org/2000/svg'
+													width='15'
+													height='15'
+													viewBox='0 0 24 24'
+												>
+													<path
+														d='M19.769 9.923l-12.642 12.639-7.127 1.438 1.438-7.128 12.641-12.64 5.69 5.691zm1.414-1.414l2.817-2.82-5.691-5.689-2.816 2.817 5.69 5.692z'
+														fill='#366EF1'
+													/>
+												</svg>
+											</span>
+											<span>
+												<svg
+													xmlns='http://www.w3.org/2000/svg'
+													width='15'
+													height='15'
+													viewBox='0 0 24 24'
+												>
+													<path
+														d='M3 6v18h18v-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.731 2 1.631 2h5.712z'
+														fill='#FF002B'
+													/>
+												</svg>
+											</span>
+										</div>
+									</td>
 								</tr>
 							);
 						})}
