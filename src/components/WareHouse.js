@@ -2,6 +2,8 @@ import { makeStyles } from '@mui/styles';
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import check from '../table/check_box.svg';
+import useWindowDimensions from './Width';
+import NavMob from './NavbarMobile';
 
 const styles = makeStyles({
 	cont: {
@@ -175,6 +177,7 @@ const styles = makeStyles({
 });
 const WareHouse = () => {
 	const classes = styles();
+	const { height, width } = useWindowDimensions();
 	const [totalChecked, setTotalChecked] = useState(0);
 	const [calander, setCalander] = useState(false);
 	const [ready, setReady] = useState(false);
@@ -217,7 +220,8 @@ const WareHouse = () => {
 
 	return (
 		<div className={classes.cont}>
-			<Navbar />
+			{width > 800 && <Navbar />}
+			{width <= 800 && <NavMob width={width} />}
 			<div className={classes.body}>
 				<div className={classes.pageInfo}>
 					<div className={classes.infoLeft}>

@@ -4,6 +4,7 @@ import Table from './components/Table';
 import Create from './components/Create';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import WareHouse from './components/WareHouse';
+import AddWareHouse from './components/AddWareHouse';
 
 function App() {
 	return (
@@ -18,6 +19,9 @@ function App() {
 					</Route>
 					<Route exact path='/wareHouse'>
 						<WareHouse />
+					</Route>
+					<Route exact path='/addWareHouse'>
+						<AddWareHouse />
 					</Route>
 				</Switch>
 			</div>
